@@ -3,4 +3,6 @@ project(DungeonsAndDragons)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(DungeonsAndDragons main.cpp)
+add_executable(DungeonsAndDragons main.cpp
+        Monsters.h
+        Monsters.cpp)
