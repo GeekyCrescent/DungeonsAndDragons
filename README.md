@@ -1,7 +1,3 @@
-Aquí tienes el README modificado, con la creación del jugador antes de implementar los grafos y con opciones de personalización de personajes, incluyendo clases específicas, cada una con 15 hechizos y habilidades únicos:
-
----
-
 # Dungeon Explorer
 
 Dungeon Explorer es un proyecto de estructuras de datos basado en el universo de **Dungeons and Dragons (D&D)**. Este sistema organiza, gestiona y recupera información clave para optimizar la experiencia de juego en partidas de D&D, tanto para los jugadores como para los Dungeon Masters.
