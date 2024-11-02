@@ -5,4 +5,12 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(DungeonsAndDragons main.cpp
         Monsters.h
-        Monsters.cpp)
+        Monsters.cpp
+        Player.h
+        Player.cpp
+        Spells.h
+        Spells.cpp
+        SpellClass.h
+        SpellClass.cpp
+        spells.csv)
+
