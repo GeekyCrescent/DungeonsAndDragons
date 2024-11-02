@@ -32,7 +32,7 @@ public:
     int getAC();
     void setAC(int ac);
     int getHP();
-    void setHP();
+    void setHP(int hp);
 };
 
 
