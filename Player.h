@@ -18,6 +18,10 @@ private:
 public:
     Player(string n, string r);
     string getRace();
+    int getLp();
+    int getMana();
     void loadSpellsFromCsv(string& filename);
     void displaySpells();
+    bool useSpell(string spellName);
+    void displayFilteredSpells();
 };

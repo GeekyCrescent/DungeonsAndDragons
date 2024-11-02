@@ -11,7 +11,7 @@ public:
     void addSpell(Spells* spell);
     void loadSpellsFromCsv(string& filename, Player& player);
     void displaySpells();
-    void displayFilteredSpells(string type);
+    void displayFilteredSpells(int playerMana);
 };
 
 

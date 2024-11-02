@@ -64,11 +64,23 @@ void SpellClass::displaySpells() {
     }
 }
 
-// Display spells of a certain type
-void SpellClass::displayFilteredSpells(std::string type) {
+// Display spells filtered
+void SpellClass::displayFilteredSpells(int playerMana) {
     Spells* current = head;
+    string type;
+    while (true) {
+        cout << "Type (OFFENSIVE, DEFENSIVE, BUFF): ";
+        cin >> type;
+        if (type == "OFFENSIVE" || type == "DEFENSIVE" || type == "BUFF") {
+            break; // valid type entered
+        } else {
+            cout << "Invalid type. Please enter one of the following: OFFENSIVE, DEFENSIVE, BUFF." << endl;
+        }
+    }
+
+    cout << "Filtered Spells" << endl;
     while (current != nullptr) {
-        if (current->getType() == type) {
+        if (current->getMana() <= playerMana && current->getType() == type) {
             current->displaySpell();
             cout << endl;
         }

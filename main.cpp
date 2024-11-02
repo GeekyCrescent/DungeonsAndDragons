@@ -7,6 +7,7 @@
 using namespace std;
 
 Player* createCharacter(); // Function prototype
+int showBattleMenu(Player* player); // Function prototype
 
 int main() {
     Player* player = createCharacter();
@@ -50,6 +51,48 @@ Player* createCharacter() {
     return player;
 }
 
-void showBattleMenu() {
+int showBattleMenu(Player* player) {
+    int choice;
+    while (true) {
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        cout << "--------------------------------------------------------" << endl;
+        cout << "Choose an action:" << endl;
+        cout << "1. Attack" << endl;
+        cout << "2. Cast Spell" << endl;
+        cin >> choice;
 
+        if (choice == 1 || choice == 2) {
+            break; // valid choice entered
+        } else {
+            cout << "Invalid choice. Please enter 1 for Attack or 2 for Cast Spell." << endl;
+        }
+    }
+
+    // Handle the chosen action
+    if (choice == 1) {
+        std::this_thread::sleep_for(std::chrono::seconds(2));
+        cout << "--------------------------------------------------------" << endl;
+        cout << "You attack the enemy!" << endl;
+        return 1;
+        // Attack logic here
+    } else if (choice == 2) {
+        std::this_thread::sleep_for(std::chrono::seconds(2));
+        cout << "--------------------------------------------------------" << endl;
+        cout << "You choose to cast a spell" << endl;
+        return 2;
+    }
+    return 0;
+}
+
+// Logic for keep playing the game and for turns
+bool continuePlaying(Player* player) {
+    while (player->getLp() > 0) { // Or monster Lp = 0
+
+    }
+
+    if (player->getLp() < 0) {
+        cout << "Lost" << endl;
+    } else {
+        cout << "Win" << endl;
+    }
 }
