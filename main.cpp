@@ -11,6 +11,12 @@ int showBattleMenu(Player* player); // Function prototype
 
 int main() {
     Player* player = createCharacter();
+    SpellClass spells;
+
+    string spellsFile = "spells.csv";
+
+    spells.loadSpellsFromCsv(spellsFile, *player);
+    player->displaySpells();
 }
 
 Player* createCharacter() {
