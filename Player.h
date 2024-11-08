@@ -16,12 +16,19 @@ private:
     SpellClass* spells;
     // Monster Defeated
 public:
+    // CONSTRUCTOR
     Player(string n, string r);
+    // GETTERS
     string getRace();
     int getLp();
     int getMana();
+    // SETTERS
+    void setLp(int lp);
+    void setHp(int hp);
+    void setMana(int mana);
+    // OTHER
     void loadSpellsFromCsv(string& filename);
     void displaySpells();
-    bool useSpell(string spellName);
+    bool castSpell();
     void displayFilteredSpells();
 };

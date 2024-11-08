@@ -3,6 +3,12 @@
 #include <fstream>
 #include <sstream>
 
+// GETTERS
+Spells* SpellClass::getHead() {
+    return this->head;
+}
+
+
 // Add a spell to the linked list
 void SpellClass::addSpell(Spells* spell) {
     if (!head) {
@@ -69,6 +75,7 @@ void SpellClass::displayFilteredSpells(int playerMana) {
     Spells* current = head;
     string type;
     while (true) {
+        cout << "-----------------------------------" << endl;
         cout << "Type (OFFENSIVE, DEFENSIVE, BUFF): ";
         cin >> type;
         if (type == "OFFENSIVE" || type == "DEFENSIVE" || type == "BUFF") {

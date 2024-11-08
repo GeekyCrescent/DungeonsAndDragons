@@ -8,15 +8,15 @@ using namespace std;
 
 Player* createCharacter(); // Function prototype
 int showBattleMenu(Player* player); // Function prototype
+bool continuePlaying(Player* player); // Function prototype
 
 int main() {
     Player* player = createCharacter();
-    SpellClass spells;
-
     string spellsFile = "spells.csv";
 
-    spells.loadSpellsFromCsv(spellsFile, *player);
-    player->displaySpells();
+    player->loadSpellsFromCsv(spellsFile);
+    continuePlaying(player); // Start the game loop
+
 }
 
 Player* createCharacter() {
@@ -65,6 +65,7 @@ int showBattleMenu(Player* player) {
         cout << "Choose an action:" << endl;
         cout << "1. Attack" << endl;
         cout << "2. Cast Spell" << endl;
+        cout << "-> ";
         cin >> choice;
 
         if (choice == 1 || choice == 2) {
@@ -76,13 +77,11 @@ int showBattleMenu(Player* player) {
 
     // Handle the chosen action
     if (choice == 1) {
-        std::this_thread::sleep_for(std::chrono::seconds(2));
         cout << "--------------------------------------------------------" << endl;
         cout << "You attack the enemy!" << endl;
         return 1;
         // Attack logic here
     } else if (choice == 2) {
-        std::this_thread::sleep_for(std::chrono::seconds(2));
         cout << "--------------------------------------------------------" << endl;
         cout << "You choose to cast a spell" << endl;
         return 2;
@@ -93,7 +92,24 @@ int showBattleMenu(Player* player) {
 // Logic for keep playing the game and for turns
 bool continuePlaying(Player* player) {
     while (player->getLp() > 0) { // Or monster Lp = 0
+        cout << "--------------------------------------------------------" << endl;
+        cout << "Health: " << player->getLp() << endl;
+        cout << "Mana: " << player->getMana() << endl;
+        // Player logic
+        int selection = showBattleMenu(player);
+        // 1 if attack, 2 if spell
+        if (selection == 1) {
+            // Damage logic
+        }
+        else if (selection == 2) {
+            player->castSpell();
+        }
 
+        // Monster logic
+
+        // Add 10 mana to player
+        cout << "You gained 10 mana!" << endl;
+        player->setMana(player->getMana() + 10);
     }
 
     if (player->getLp() < 0) {

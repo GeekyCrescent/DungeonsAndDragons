@@ -54,7 +54,7 @@ Evasion,DEFENSIVE,Increases dodge chance temporarily,20,8,Rogue
 Backstab,OFFENSIVE,Deals extra damage when attacking from stealth,40,10,Rogue
 Disarm Trap,BUFF,Disarms traps in the area,0,5,Rogue
 Grappling Hook,BUFF,Allows quick movement to elevated areas,0,7,Rogue
-Vanish,DEFENSIVE,Makes the rogue temporarily invisible and untargetable,0,20,Rogue
+Vanish,DEFENSIVE,Makes the rogue temporarily invisible and untargetable,50,20,Rogue
 Fan of Knives,OFFENSIVE,Throws knives at all enemies in range,30,12,Rogue
 Silence,OFFENSIVE,Prevents an enemy from casting spells for a duration,15,10,Rogue
 Shadow Dance,BUFF,Grants extra abilities while in stealth,0,25,Rogue
