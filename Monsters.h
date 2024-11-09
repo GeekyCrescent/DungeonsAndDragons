@@ -1,4 +1,6 @@
-#pragma once
+
+#ifndef MONSTERS_H
+#define MONSTERS_H
 #include <iostream>
 using namespace std;
 
@@ -12,6 +14,15 @@ private:
     int hp;
     string align;
 public:
+    Monsters() {
+        name = "";
+        cr = 0;
+        type = "";
+        size = "";
+        ac = 0;
+        hp = 0;
+        align = "";
+    }
     Monsters(string name, float cr, string type, string size, int ac, int hp, string align) {
         this->name = name;
         this->cr = cr;
@@ -35,4 +46,4 @@ public:
     void setHP(int hp);
 };
 
-
+#endif
