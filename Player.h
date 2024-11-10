@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include "Monster.h"
 
 using namespace std;
 
@@ -29,6 +30,6 @@ public:
     // OTHER
     void loadSpellsFromCsv(string& filename);
     void displaySpells();
-    bool castSpell();
+    bool castSpell(Monsters* monster);
     void displayFilteredSpells();
 };

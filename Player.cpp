@@ -43,7 +43,7 @@ void Player::displaySpells() {
     this->spells->displaySpells();
 }
 
-bool Player::castSpell() {
+bool Player::castSpell(Monsters* monster) {
     displayFilteredSpells();
     cout << "------------------------------" << std::endl;
     cout << "Select a spell from the list above" << std::endl;
@@ -60,6 +60,14 @@ bool Player::castSpell() {
             cout << "You do not have enough mana to cast this spell" << endl;
             return false;
         }
+        if (current->getType() == "OFFENSIVE") {
+            int amountEffect = current -> getAmountEffect();
+            cout << "You cast " << current->getName() << " and dealt " << amountEffect << " damage to " << monster->getName() << endl;
+            monster->setHP(monster->getHP() - amountEffect);
+            this->setMana(this->getMana() - current->getMana());
+            return true;
+        }
+
         if (current->getType() == "DEFENSIVE") {
             int amountEffect = current -> getAmountEffect();
             this->setLp(this->getLp() + amountEffect);
@@ -70,7 +78,9 @@ bool Player::castSpell() {
     }
     else {
         cout << "There was no spell with that name" << endl;
+        return false;
     }
+    return false;
 }
 
 void Player::displayFilteredSpells() {

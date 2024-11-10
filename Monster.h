@@ -29,6 +29,7 @@ public:
 
     // setter
     void setNext(Monsters* nextMonster);
+    void setHP(int hp);
 
     // display
     void displayMonster(); // Asegúrate de que esta línea esté presente

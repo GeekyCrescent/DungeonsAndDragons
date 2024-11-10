@@ -15,7 +15,7 @@ Conjure Food,BUFF,Creates food to restore health over time,10,5,Mage
 Arcane Missiles,OFFENSIVE,Fires a barrage of arcane missiles at a target,30,11,Mage
 Blizzard,OFFENSIVE,Summons a storm of ice to damage and slow enemies,35,18,Mage
 Healing Light,BUFF,Restores health to allies,20,8,Cleric
-Divine Protection,DEFENSIVE,Grants a protective barrier against attacks,25,12,Cleric
+DivineProtection,DEFENSIVE,Grants a protective barrier against attacks,25,12,Cleric
 Holy Smite,OFFENSIVE,Deals radiant damage to enemies,28,10,Cleric
 Aura of Courage,BUFF,Increases the morale of allies boosting their damage,15,5,Cleric
 Guardian Angel,DEFENSIVE,Summons a protective spirit to shield an ally,40,18,Cleric

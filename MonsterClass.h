@@ -1,7 +1,3 @@
-//
-// Created by Noel Sebastian Marquez Tovar on 06/11/24.
-//
-
 #pragma once
 #include "Monster.h"
 #include <string>

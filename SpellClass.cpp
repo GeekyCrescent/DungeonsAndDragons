@@ -84,7 +84,7 @@ void SpellClass::displayFilteredSpells(int playerMana) {
             cout << "Invalid type. Please enter one of the following: OFFENSIVE, DEFENSIVE, BUFF." << endl;
         }
     }
-
+    cout << "-----------------------------------" << endl;
     cout << "Filtered Spells" << endl;
     while (current != nullptr) {
         if (current->getMana() <= playerMana && current->getType() == type) {

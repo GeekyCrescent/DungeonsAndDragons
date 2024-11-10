@@ -1,5 +1,3 @@
-// Created by Noel Sebastian Marquez Tovar on 06/11/24.
-
 #include "MonsterClass.h"
 #include <iostream>
 #include <fstream>

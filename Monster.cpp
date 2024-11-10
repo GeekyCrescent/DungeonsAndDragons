@@ -40,6 +40,10 @@ void Monsters::setNext(Monsters *monster) {
     this->next = monster;
 }
 
+void Monsters::setHP(int hp) {
+    this->hp = hp;
+}
+
 // display
 void Monsters::displayMonster() {
     cout << "Name: " << this->getName() << ", ";

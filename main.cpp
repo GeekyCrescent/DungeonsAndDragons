@@ -1,6 +1,8 @@
 #include <iostream>
 #include "SpellClass.h"
 #include "Player.h"
+#include "MonsterClass.h"
+#include "Monster.h"
 #include <thread>  // Include this header for sleep functionality
 #include <chrono>  // Include this header for duration
 
@@ -8,15 +10,15 @@ using namespace std;
 
 Player* createCharacter(); // Function prototype
 int showBattleMenu(Player* player); // Function prototype
-bool continuePlaying(Player* player); // Function prototype
+bool continuePlaying(Player* player, Monsters* monster); // Function prototype
 
 int main() {
     Player* player = createCharacter();
     string spellsFile = "spells.csv";
-
+    Monsters* monster = new Monsters("aarakocra",0.25,"humanoid (aarakocra)","Medium",12,100,"neutral good");
     player->loadSpellsFromCsv(spellsFile);
-    continuePlaying(player); // Start the game loop
-
+    continuePlaying(player, monster); // Start the game loop
+    return 0;
 }
 
 Player* createCharacter() {
@@ -39,7 +41,7 @@ Player* createCharacter() {
         }
     }
 
-    cout << "Creating player..." << endl << endl;
+/*    cout << "Creating player..." << endl << endl;
     std::this_thread::sleep_for(std::chrono::seconds(2));
     cout << "Welcome " << name << ", a " << race << "!" << endl;
     std::this_thread::sleep_for(std::chrono::seconds(2));
@@ -51,7 +53,7 @@ Player* createCharacter() {
     std::this_thread::sleep_for(std::chrono::seconds(2));
     cout << "Your adventure begins now. Gather your allies, prepare your spells, and sharpen your blades." << endl;
     std::this_thread::sleep_for(std::chrono::seconds(2));
-    cout << "The fate of your world lies in your hands. Ready your heart, for peril and treasure await!" << endl;
+    cout << "The fate of your world lies in your hands. Ready your heart, for peril and treasure await!" << endl;*/
 
     Player* player = new Player(name, race);
     return player;
@@ -90,8 +92,13 @@ int showBattleMenu(Player* player) {
 }
 
 // Logic for keep playing the game and for turns
-bool continuePlaying(Player* player) {
-    while (player->getLp() > 0) { // Or monster Lp = 0
+bool continuePlaying(Player* player, Monsters* monster) {
+    int monsterDamagePermanent = static_cast<int>(monster->getHP() * 0.2);
+    std::this_thread::sleep_for(std::chrono::seconds(1));
+    cout << "--------------------------------------------------------" << endl;
+    cout << "A " << monster->getName() << " appears!" << endl;
+    while (player->getLp() > 0 && monster->getHP() > 0) {
+        bool possibleSpell = true;
         cout << "--------------------------------------------------------" << endl;
         cout << "Health: " << player->getLp() << endl;
         cout << "Mana: " << player->getMana() << endl;
@@ -102,14 +109,27 @@ bool continuePlaying(Player* player) {
             // Damage logic
         }
         else if (selection == 2) {
-            player->castSpell();
+            possibleSpell = player->castSpell(monster);
+            if (!possibleSpell) {
+                continuePlaying(player, monster);
+            }
         }
 
         // Monster logic
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        cout << "--------------------------------------------------------" << endl;
+        cout << "Monster Health: " << monster->getHP() << endl;
+        cout << monster->getName() << " attacks!" << endl;
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        // I will choose 20% of the total hp of the monster
+        cout << "It deals " << monsterDamagePermanent << " damage to you!" << endl;
+        player->setLp(player->getLp() - monsterDamagePermanent);
 
         // Add 10 mana to player
-        cout << "You gained 10 mana!" << endl;
-        player->setMana(player->getMana() + 10);
+        if (possibleSpell && player->getLp() > 0) {
+            cout << "You gained 10 mana!" << endl;
+            player->setMana(player->getMana() + 10);
+        }
     }
 
     if (player->getLp() < 0) {
