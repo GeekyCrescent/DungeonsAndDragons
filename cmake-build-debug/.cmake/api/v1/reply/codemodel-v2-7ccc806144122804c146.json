@@ -6,7 +6,7 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.27"
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "DungeonsAndDragons::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-DungeonsAndDragons-Debug-60371e71f95299ba9bf4.json",
+					"jsonFile" : "target-DungeonsAndDragons-Debug-f0d21906b51c2e8b41be.json",
 					"name" : "DungeonsAndDragons",
 					"projectIndex" : 0
 				}
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/Users/noel/DungeonsAndDragons/cmake-build-debug",
-		"source" : "/Users/noel/DungeonsAndDragons"
+		"build" : "C:/Juan Ferro/Cursos/Proyectos/DungeonsAndDragons/cmake-build-debug",
+		"source" : "C:/Juan Ferro/Cursos/Proyectos/DungeonsAndDragons"
 	},
 	"version" : 
 	{
