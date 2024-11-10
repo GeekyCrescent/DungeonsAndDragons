@@ -41,7 +41,7 @@ Player* createCharacter() {
         }
     }
 
-/*    cout << "Creating player..." << endl << endl;
+    cout << "Creating player..." << endl << endl;
     std::this_thread::sleep_for(std::chrono::seconds(2));
     cout << "Welcome " << name << ", a " << race << "!" << endl;
     std::this_thread::sleep_for(std::chrono::seconds(2));
@@ -53,7 +53,7 @@ Player* createCharacter() {
     std::this_thread::sleep_for(std::chrono::seconds(2));
     cout << "Your adventure begins now. Gather your allies, prepare your spells, and sharpen your blades." << endl;
     std::this_thread::sleep_for(std::chrono::seconds(2));
-    cout << "The fate of your world lies in your hands. Ready your heart, for peril and treasure await!" << endl;*/
+    cout << "The fate of your world lies in your hands. Ready your heart, for peril and treasure await!" << endl;
 
     Player* player = new Player(name, race);
     return player;
@@ -67,10 +67,11 @@ int showBattleMenu(Player* player) {
         cout << "Choose an action:" << endl;
         cout << "1. Attack" << endl;
         cout << "2. Cast Spell" << endl;
+        cout << "3. Heal" << endl;
         cout << "-> ";
         cin >> choice;
 
-        if (choice == 1 || choice == 2) {
+        if (choice == 1 || choice == 2 || choice == 3) {
             break; // valid choice entered
         } else {
             cout << "Invalid choice. Please enter 1 for Attack or 2 for Cast Spell." << endl;
@@ -87,6 +88,10 @@ int showBattleMenu(Player* player) {
         cout << "--------------------------------------------------------" << endl;
         cout << "You choose to cast a spell" << endl;
         return 2;
+    } else if (choice == 3) {
+        cout << "--------------------------------------------------------" << endl;
+        cout << "You choose to heal" << endl;
+        return 3;
     }
     return 0;
 }
@@ -106,7 +111,13 @@ bool continuePlaying(Player* player, Monsters* monster) {
         int selection = showBattleMenu(player);
         // 1 if attack, 2 if spell
         if (selection == 1) {
-            // Damage logic
+            cout << "You attack the monster!" << endl;
+            int dice = player->attackDice();
+            int damage = dice * player->getHp() / 2;
+            cout << "The dice rolls: " << dice << endl;
+            // Decide to deal `damage * dice / 2` of the total hp of the player
+            cout << "You deal " << damage << " damage to the monster!" << endl;
+            monster->setHP(monster->getHP() - damage);
         }
         else if (selection == 2) {
             possibleSpell = player->castSpell(monster);
@@ -114,27 +125,44 @@ bool continuePlaying(Player* player, Monsters* monster) {
                 continuePlaying(player, monster);
             }
         }
+        else if (selection == 3) {
+            cout << "You heal yourself!" << endl;
+            int dice = player->healDice();
+            cout << "The dice rolls: " << dice << endl;
+            // Decide to heal `dice * 2` of the total hp of the player
+            cout << "You heal " << dice * 2 << " life points!" << endl;
+            player->setLp(player->getLp() + dice * 2);
+        }
 
         // Monster logic
         std::this_thread::sleep_for(std::chrono::seconds(1));
-        cout << "--------------------------------------------------------" << endl;
-        cout << "Monster Health: " << monster->getHP() << endl;
-        cout << monster->getName() << " attacks!" << endl;
-        std::this_thread::sleep_for(std::chrono::seconds(1));
-        // I will choose 20% of the total hp of the monster
-        cout << "It deals " << monsterDamagePermanent << " damage to you!" << endl;
-        player->setLp(player->getLp() - monsterDamagePermanent);
+        if (monster->getHP() > 0) {
+            cout << "--------------------------------------------------------" << endl;
+            cout << "Monster Health: " << monster->getHP() << endl;
+            cout << monster->getName() << " attacks!" << endl;
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+            // I will choose 20% of the total hp of the monster
+            cout << "It deals " << monsterDamagePermanent << " damage to you!" << endl;
+            player->setLp(player->getLp() - monsterDamagePermanent);
+        }
 
-        // Add 10 mana to player
+        // Add 5 mana to player
         if (possibleSpell && player->getLp() > 0) {
-            cout << "You gained 10 mana!" << endl;
-            player->setMana(player->getMana() + 10);
+            cout << "You gained 5 mana!" << endl;
+            player->setMana(player->getMana() + 5);
         }
     }
 
     if (player->getLp() < 0) {
         cout << "Lost" << endl;
+        return false;
     } else {
-        cout << "Win" << endl;
+        cout << "You defeated " << monster->getName() << "!" << endl;
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        player->addExperience();
+        cout << "--------------------------------------------------------" << endl;
+        cout << "Health: " << player->getLp() << endl;
+        cout << "Mana: " << player->getMana() << endl;
+        return true;
     }
 }

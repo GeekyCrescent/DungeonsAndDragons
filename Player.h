@@ -23,13 +23,19 @@ public:
     string getRace();
     int getLp();
     int getMana();
+    int getHp();
     // SETTERS
     void setLp(int lp);
     void setHp(int hp);
     void setMana(int mana);
-    // OTHER
+    // SPELLS METHODS
     void loadSpellsFromCsv(string& filename);
     void displaySpells();
     bool castSpell(Monsters* monster);
     void displayFilteredSpells();
+    // ATTACK METHODS
+    int attackDice();
+    int healDice();
+    // EXPERIENCE
+    void addExperience();
 };
