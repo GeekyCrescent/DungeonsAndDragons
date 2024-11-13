@@ -159,10 +159,16 @@ bool continuePlaying(Player* player, Monsters* monster) {
     } else {
         cout << "You defeated " << monster->getName() << "!" << endl;
         std::this_thread::sleep_for(std::chrono::seconds(1));
+        // Add experience
         player->addExperience();
+        // Add money according to the monster
+        player->setMoney(player->getMoney() + 10 * monster->getHP());
         cout << "--------------------------------------------------------" << endl;
         cout << "Health: " << player->getLp() << endl;
         cout << "Mana: " << player->getMana() << endl;
+        player->showStore();
         return true;
     }
 }
+
+

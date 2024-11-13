@@ -26,6 +26,10 @@ int Player::getHp() {
     return this->hp;
 }
 
+int Player::getMoney() {
+    return this->money;
+}
+
 // SETTERS
 void Player::setLp(int lp) {
     this->lp = lp;
@@ -37,6 +41,10 @@ void Player::setHp(int hp) {
 
 void Player::setMana(int mana) {
     this->mana = mana;
+}
+
+void Player::setMoney(int money) {
+    this->money = money;
 }
 
 // SPELL METHODS
@@ -119,13 +127,75 @@ int Player::healDice() {
 
 // EXPERIENCE
 void Player::addExperience() {
+    // Random number between 0.0 and 10.0 from ChatGPT because other codes would always return 2
+    static std::random_device rd;
+    static std::mt19937 gen(rd());
+    static std::uniform_real_distribution<float> distrib(0.0, 10.0);
+    // Generate a random number and round it to one decimal place
+    float random_number = distrib(gen);
+    random_number = std::round(random_number * 10) / 10.0f;
     cout << "----------------------------------------------------------" << endl;
     cout << "You gained 100 experience, you improve your statistics by:" << endl;
     cout << "+50 life points" << endl;
     cout << "+20 mana" << endl;
     cout << "+5 attack points" << endl;
+    cout << "+" << random_number * 100 << " money" << endl;
 
     this->setLp(this->getLp() + 50);
     this->setMana(this->getMana() + 20);
     this->setHp(this->getHp() + 5);
+    this->setMoney(this->getMoney() + random_number * 100);
+}
+
+void Player::showStore() {
+    cout << "----------------------------------------------------------" << endl;
+    cout << "Welcome to the store!" << endl;
+    cout << "You can buy the following items:" << endl;
+    cout << "1. Life Potion (50 LP): 1000 money" << endl;
+    cout << "2. Mana Potion (50 Mana): 1500 money" << endl;
+    cout << "3. Attack Potion (5 Attack): 500 money" << endl;
+    cout << "4. Exit" << endl;
+    cout << "----------------------------------------------------------" << endl;
+    int choice;
+    cin >> choice;
+
+    while (choice != 1 && choice != 2 && choice != 3 && choice != 4) {
+        cout << "Invalid choice. Please enter a number between 1 and 4." << endl;
+        cin >> choice;
+    }
+
+    switch (choice) {
+        case 1:
+            if (this->getMoney() >= 1000) {
+                this->setLp(this->getLp() + 50);
+                this->setMoney(this->getMoney() - 1000);
+                cout << "You bought a life potion and gained 50 life points!" << endl;
+            } else {
+                cout << "You do not have enough money to buy a life potion." << endl;
+            }
+            break;
+
+        case 2:
+            if (this->getMoney() >= 1500) {
+                this->setMana(this->getMana() + 50);
+                this->setMoney(this->getMoney() - 1500);
+                cout << "You bought a mana potion and gained 50 mana!" << endl;
+            } else {
+                cout << "You do not have enough money to buy a mana potion." << endl;
+            }
+            break;
+
+        case 3:
+            if (this->getMoney() >= 500) {
+                this->setHp(this->getHp() + 5);
+                this->setMoney(this->getMoney() - 500);
+                cout << "You bought an attack potion and gained 5 attack points!" << endl;
+            } else {
+                cout << "You do not have enough money to buy an attack potion." << endl;
+            }
+            break;
+        case 4:
+            cout << "You left the store." << endl;
+            break;
+    }
 }

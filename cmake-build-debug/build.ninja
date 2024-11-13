@@ -85,6 +85,12 @@ build CMakeFiles/DungeonsAndDragons.dir/Monster.cpp.obj: CXX_COMPILER__DungeonsA
   OBJECT_DIR = CMakeFiles\DungeonsAndDragons.dir
   OBJECT_FILE_DIR = CMakeFiles\DungeonsAndDragons.dir
 
+build CMakeFiles/DungeonsAndDragons.dir/Store.cpp.obj: CXX_COMPILER__DungeonsAndDragons_unscanned_Debug C$:/Juan$ Ferro/Cursos/Proyectos/DungeonsAndDragons/Store.cpp || cmake_object_order_depends_target_DungeonsAndDragons
+  DEP_FILE = CMakeFiles\DungeonsAndDragons.dir\Store.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\DungeonsAndDragons.dir
+  OBJECT_FILE_DIR = CMakeFiles\DungeonsAndDragons.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target DungeonsAndDragons
@@ -93,7 +99,7 @@ build CMakeFiles/DungeonsAndDragons.dir/Monster.cpp.obj: CXX_COMPILER__DungeonsA
 #############################################
 # Link the executable DungeonsAndDragons.exe
 
-build DungeonsAndDragons.exe: CXX_EXECUTABLE_LINKER__DungeonsAndDragons_Debug CMakeFiles/DungeonsAndDragons.dir/main.cpp.obj CMakeFiles/DungeonsAndDragons.dir/Player.cpp.obj CMakeFiles/DungeonsAndDragons.dir/Spells.cpp.obj CMakeFiles/DungeonsAndDragons.dir/SpellClass.cpp.obj CMakeFiles/DungeonsAndDragons.dir/MonsterClass.cpp.obj CMakeFiles/DungeonsAndDragons.dir/Monster.cpp.obj
+build DungeonsAndDragons.exe: CXX_EXECUTABLE_LINKER__DungeonsAndDragons_Debug CMakeFiles/DungeonsAndDragons.dir/main.cpp.obj CMakeFiles/DungeonsAndDragons.dir/Player.cpp.obj CMakeFiles/DungeonsAndDragons.dir/Spells.cpp.obj CMakeFiles/DungeonsAndDragons.dir/SpellClass.cpp.obj CMakeFiles/DungeonsAndDragons.dir/MonsterClass.cpp.obj CMakeFiles/DungeonsAndDragons.dir/Monster.cpp.obj CMakeFiles/DungeonsAndDragons.dir/Store.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\DungeonsAndDragons.dir

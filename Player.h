@@ -14,6 +14,7 @@ private:
     int hp = 10;
     int lp = 100;
     int mana = 100;
+    int money = 0;
     SpellClass* spells;
     // Monster Defeated
 public:
@@ -24,10 +25,12 @@ public:
     int getLp();
     int getMana();
     int getHp();
+    int getMoney();
     // SETTERS
     void setLp(int lp);
     void setHp(int hp);
     void setMana(int mana);
+    void setMoney(int money);
     // SPELLS METHODS
     void loadSpellsFromCsv(string& filename);
     void displaySpells();
@@ -36,6 +39,7 @@ public:
     // ATTACK METHODS
     int attackDice();
     int healDice();
-    // EXPERIENCE
+    // EXPERIENCE AND STORE
     void addExperience();
+    void showStore();
 };
