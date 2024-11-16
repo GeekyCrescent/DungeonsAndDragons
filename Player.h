@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <vector>
 #include "Monster.h"
 
 using namespace std;
@@ -16,7 +17,7 @@ private:
     int mana = 100;
     int money = 0;
     SpellClass* spells;
-    // Monster Defeated
+    vector<Monsters*> monsters;
 public:
     // CONSTRUCTOR
     Player(string n, string r);
@@ -31,6 +32,7 @@ public:
     void setHp(int hp);
     void setMana(int mana);
     void setMoney(int money);
+    void addMonster(Monsters* monster);
     // SPELLS METHODS
     void loadSpellsFromCsv(string& filename);
     void displaySpells();
@@ -42,4 +44,6 @@ public:
     // EXPERIENCE AND STORE
     void addExperience();
     void showStore();
+    // Defeated Monsters
+    void displayDefeatedMonsters();
 };

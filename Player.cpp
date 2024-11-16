@@ -47,6 +47,10 @@ void Player::setMoney(int money) {
     this->money = money;
 }
 
+void Player::addMonster(Monsters* monster) {
+    this->monsters.push_back(monster);
+}
+
 // SPELL METHODS
 void Player::loadSpellsFromCsv(string& filename) {
     this->spells->loadSpellsFromCsv(filename, *this);
@@ -150,6 +154,7 @@ void Player::addExperience() {
 void Player::showStore() {
     cout << "----------------------------------------------------------" << endl;
     cout << "Welcome to the store!" << endl;
+    cout << "You have " << this->getMoney() << " money." << endl;
     cout << "You can buy the following items:" << endl;
     cout << "1. Life Potion (50 LP): 1000 money" << endl;
     cout << "2. Mana Potion (50 Mana): 1500 money" << endl;
@@ -197,5 +202,16 @@ void Player::showStore() {
         case 4:
             cout << "You left the store." << endl;
             break;
+
+        default:
+            break;
+    }
+}
+
+void Player::displayDefeatedMonsters() {
+    cout << "----------------------------------------------------------" << endl;
+    cout << "Defeated Monsters" << endl;
+    for (Monsters* monster : monsters) {
+        cout << monster->getName() << endl;
     }
 }

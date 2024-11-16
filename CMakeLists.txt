@@ -17,5 +17,9 @@ add_executable(DungeonsAndDragons main.cpp
         monster.h
         monster.cpp
         Monster.h
+        Room.h
+        Room.cpp
+        Dungeon.h
+        Dungeon.cpp
 )
 

@@ -3,6 +3,7 @@
 #include <fstream>
 #include <sstream>
 #include <stdexcept>
+#include <random>
 
 // add a monster to the linked list
 void MonsterClass::addMonster(Monsters* monster) {
@@ -91,3 +92,49 @@ void MonsterClass::displayMonsters() {
         current = current->getNext();
     }
 }
+
+// Get random monster from the list
+std::vector<Monsters*> MonsterClass::getRandomMonster() {
+    // Create a random device and a random number generator
+    std::random_device rd;
+    std::mt19937 gen(rd());
+
+    // Create a uniform distribution in the range [1, 700]
+    std::uniform_int_distribution<> dis(1, 760);
+
+    // Vector to hold the pointers of selected monsters
+    std::vector<Monsters*> selectedMonsters;
+
+    // Loop to select 20 random monsters
+    for (int i = 0; i < 20; i++) {
+        int randomIndex = dis(gen);
+
+        // Traverse the list to find the monster at the random index
+        Monsters* current = head;
+        int currentIndex = 1;  // Start from 1 since the list is 1-based in terms of index
+        while (current) {
+            if (currentIndex == randomIndex) {
+                // Ensure that we don't select the same monster twice
+                bool alreadySelected = false;
+                for (Monsters* selected : selectedMonsters) {
+                    if (selected == current) {
+                        alreadySelected = true;
+                        break;
+                    }
+                }
+
+                // If not already selected, add it to the list of selected monsters
+                if (!alreadySelected) {
+                    selectedMonsters.push_back(current);
+                    current->setRoomNumber(i+1);
+                    break;
+                }
+            }
+            current = current->getNext();
+            currentIndex++;
+        }
+    }
+
+    return selectedMonsters;  // Optionally return a monster or a list
+}
+

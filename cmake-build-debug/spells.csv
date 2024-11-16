@@ -7,58 +7,58 @@ FlameShield,DEFENSIVE,Creates a shield of flames that absorbs damage,30,15,Mage
 ArcaneExplosion,OFFENSIVE,A burst of arcane energy damaging nearby foes,28,14,Mage
 FrostNova,OFFENSIVE,Freezes enemies in place for a short duration,22,10,Mage
 MirrorImage,DEFENSIVE,Creates an illusion of yourself and protects you,35,15,Mage
-Polymorph,BUFF,Transforms yourself into a rhino for one turn,40,20,Mage
-TimeWarp,BUFF,Speeds up allies' actions for a short duration,0,15,Mage
+Polymorph,BUFF,Transforms yourself into a rhino for one turn,8,40,Mage
+TimeWarp,BUFF,Speed ups your attack and deal more damage,6,30,Mage
 Teleport,DEFENSIVE,Teleports some of the damage to another location,45,25,Mage
 IceBarrier,DEFENSIVE,Protects the caster with a barrier of ice,80,40,Mage
-ConjureFood,BUFF,Creates food to restore health over time,10,5,Mage
+ConjureFood,BUFF,Creates food to increase your damage,4,20,Mage
 ArcaneMissiles,OFFENSIVE,Fires a barrage of arcane missiles at a target,150,60,Mage
 Blizzard,OFFENSIVE,Summons a storm of ice to damage and slow enemies,55,30,Mage
-HealingLight,BUFF,Restores health to allies,20,8,Cleric
+AngelLight,BUFF,Gains damage from an angel,8,40,Cleric
 DivineProtection,DEFENSIVE,Grants a protective barrier against attacks,60,30,Cleric
 HolySmite,OFFENSIVE,Deals radiant damage to enemies,100,45,Cleric
-AuraOfCourage,BUFF,Increases the morale of allies boosting their damage,15,5,Cleric
+AuraOfCourage,BUFF,Increases the morale,6,30,Cleric
 GuardianAngel,DEFENSIVE,Summons a protective spirit to shield an ally,90,45,Cleric
-DivineIntervention,BUFF,Revives a fallen ally with a portion of their health,50,30,Cleric
-MassHeal,BUFF,Heals all allies in range,35,25,Cleric
+DivineIntervention,BUFF,May God help the monster,16,80,Cleric
+MassBuff,BUFF,Gives you a mass buff,10,50,Cleric
 SacredShield,DEFENSIVE,Grants an ally a shield that absorbs damage,30,15,Cleric
-Purify,BUFF,Removes negative effects from allies,0,10,Cleric
-LightOfDawn,BUFF,Heals allies in a cone in front of the caster,25,15,Cleric
+Purify,BUFF,Gains little buff damage,3,15,Cleric
+LightOfDawn,BUFF,Borrow some strength from the angels,12,60,Cleric
 TurnUndead,OFFENSIVE,Repels undead creatures,40,20,Cleric
 ShieldOfFaith,DEFENSIVE,Increases an ally's defense,20,10,Cleric
-SpiritLink,BUFF,Links the health of two allies together temporarily,0,12,Cleric
-Rejuvenation,BUFF,Restores health over time,15,7,Cleric
+SpiritLink,BUFF,Links your strength to a nexus,2,10,Cleric
+Rejuvenation,BUFF,Gains little strength,1,5,Cleric
 Consecration,OFFENSIVE,Creates a damaging area of light,30,12,Cleric
-BlessingOfMight,BUFF,Increases an ally's strength,10,5,Cleric
-BattleRoar,BUFF,Increases attack power of allies in range,15,8,Warrior
+BlessingOfMight,BUFF,Let Andres give you powers,20,100,Cleric
+BattleRoar,BUFF,Increases attack power,8,40,Warrior
 ShieldWall,DEFENSIVE,Raises a wall of shields to block incoming attacks,35,10,Warrior
 Cleave,OFFENSIVE,A powerful swing that hits multiple enemies,55,25,Warrior
 Charge,OFFENSIVE,Rushes forward to deal damage and knock back enemies,25,12,Warrior
-Fortify,BUFF,Temporarily increases defense,20,10,Warrior
+Fortify,BUFF,Temporarily increases attack,6,30,Warrior
 Whirlwind,OFFENSIVE,Spins around to damage all nearby enemies,28,15,Warrior
 Taunt,DEFENSIVE,Forces enemies to attack the warrior,10,5,Warrior
-Berserk,BUFF,Increases attack speed and damage for a short duration,30,20,Warrior
+Berserk,BUFF,Increases attack speed and damage,12,60,Warrior
 HeroicLeap,OFFENSIVE,Leaps to a target dealing damage upon landing,40,15,Warrior
 ShieldBash,OFFENSIVE,Bashes an enemy with a shield stunning them,20,10,Warrior
-RallyingCry,BUFF,Increases the maximum health of allies temporarily,25,12,Warrior
+RallyingCry,BUFF,Increases your damage as the last resource,4,20,Warrior
 IronSkin,DEFENSIVE,Increases physical resistance for a short time,30,15,Warrior
-WarCry,BUFF,Boosts morale increasing the damage of nearby allies,15,8,Warrior
+WarCry,BUFF,Boosts morale increasing the damage,2,10,Warrior
 Execute,OFFENSIVE,Finishes off a weakened enemy for high damage,50,20,Warrior
 DefensiveStance,DEFENSIVE,Reduces damage taken,50,25,Warrior
 GroundSlam,OFFENSIVE,Slams the ground dealing damage in a radius,70,30,Warrior
 ShadowStep,OFFENSIVE,Teleports behind an enemy to deal a surprise attack,40,20,Rogue
 SmokeBomb,DEFENSIVE,Creates a cloud of smoke to obscure vision,50,20,Rogue
 PoisonBlade,OFFENSIVE,Adds poison damage to attacks for a short duration,25,15,Rogue
-Invisibility,BUFF,Grants invisibility for stealthy maneuvers,15,12,Rogue
+Invisibility,BUFF,Grants invisibility and gain damage,8,40,Rogue
 Evasion,DEFENSIVE,Increases dodge chance temporarily,20,10,Rogue
 Backstab,OFFENSIVE,Deals extra damage when attacking from stealth,20,10,Rogue
-DisarmTrap,BUFF,Disarms traps in the area,0,5,Rogue
-GrapplingHook,BUFF,Allows quick movement to elevated areas,0,7,Rogue
+DisarmTrap,BUFF,Disarms traps in the area,6,30,Rogue
+GrapplingHook,BUFF,Allows quick movement to elevated areas,4,20,Rogue
 Vanish,DEFENSIVE,Makes the rogue temporarily invisible and untargetable,50,20,Rogue
 FanOfKnives,OFFENSIVE,Throws knives at all enemies in range,60,30,Rogue
 Silence,OFFENSIVE,Prevents an enemy from casting spells for a duration,20,10,Rogue
-ShadowDance,BUFF,Grants extra abilities while in stealth,0,25,Rogue
+ShadowDance,BUFF,Grants extra abilities while in stealth,8,40,Rogue
 CloakOfShadows,DEFENSIVE,Reduces damage from magic attacks temporarily,65,30,Rogue
-CharmedLife,BUFF,Temporarily increases luck for critical hits,10,6,Rogue
-SliceAndDice,BUFF,Increases attack speed for a short duration,20,8,Rogue
+CharmedLife,BUFF,Temporarily increases luck for critical hits,6,30,Rogue
+SliceAndDice,BUFF,Increases attack speed for a short duration,4,20,Rogue
 QuickEscape,DEFENSIVE,Increases movement speed to escape danger,20,10,Rogue

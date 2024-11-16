@@ -1,6 +1,7 @@
 #pragma once
 #include "Monster.h"
 #include <string>
+#include <vector>
 
 class MonsterClass {
 private:
@@ -11,5 +12,6 @@ public:
     void addMonster(Monsters* monster);
     void loadMonstersFromCsv(const std::string& filename);
     void displayMonsters();
+    std::vector<Monsters*> getRandomMonster();
 };
 

@@ -75,7 +75,6 @@ void SpellClass::displayFilteredSpells(int playerMana) {
     Spells* current = head;
     string type;
     while (true) {
-        cout << "-----------------------------------" << endl;
         cout << "Type (OFFENSIVE, DEFENSIVE, BUFF): ";
         cin >> type;
         if (type == "OFFENSIVE" || type == "DEFENSIVE" || type == "BUFF") {

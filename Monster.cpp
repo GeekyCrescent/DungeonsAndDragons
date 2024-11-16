@@ -35,6 +35,10 @@ Monsters* Monsters::getNext() {
     return this->next;
 }
 
+int Monsters::getRoomNumber() {
+    return this->roomNumber;
+}
+
 // setter
 void Monsters::setNext(Monsters *monster) {
     this->next = monster;
@@ -42,6 +46,10 @@ void Monsters::setNext(Monsters *monster) {
 
 void Monsters::setHP(int hp) {
     this->hp = hp;
+}
+
+void Monsters::setRoomNumber(int number) {
+    this->roomNumber = number;
 }
 
 // display
@@ -53,4 +61,5 @@ void Monsters::displayMonster() {
     cout << "AC: " << this->getAC() << ", ";
     cout << "HP: " << this->getHP() << ", ";
     cout << "Alignment: " << this->getAlign() << endl;
+    cout << "Room Number: " << this->getRoomNumber() << endl;
 }
