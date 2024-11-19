@@ -32,7 +32,6 @@ public:
     void setHp(int hp);
     void setMana(int mana);
     void setMoney(int money);
-    void addMonster(Monsters* monster);
     // SPELLS METHODS
     void loadSpellsFromCsv(string& filename);
     void displaySpells();
@@ -46,4 +45,6 @@ public:
     void showStore();
     // Defeated Monsters
     void displayDefeatedMonsters();
+    void addMonster(Monsters* monster);
+
 };

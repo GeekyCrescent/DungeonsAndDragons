@@ -40,6 +40,7 @@ void SpellClass::loadSpellsFromCsv(std::string &filename, Player& player) {
         std::istringstream ss(line);
         std::string name, type, effect, amountEffectStr, manaStr, race;
 
+        // Read each value to the variables
         std::getline(ss, name, ',');
         std::getline(ss, type, ',');
         std::getline(ss, effect, ',');
@@ -47,10 +48,11 @@ void SpellClass::loadSpellsFromCsv(std::string &filename, Player& player) {
         std::getline(ss, manaStr, ',');
         std::getline(ss, race, ',');
 
-
+        // Transform into ints
         int amountEffect = std::stoi(amountEffectStr);
         int mana = std::stoi(manaStr);
 
+        // If race selected is the same as the spells
         if (race == player.getRace()) {
             Spells* newSpell = new Spells(name, type, effect, amountEffect, mana);
             addSpell(newSpell);

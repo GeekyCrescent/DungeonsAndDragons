@@ -39,12 +39,12 @@ void Dungeon::displayMatrix() {
     }
 }
 
-void Dungeon::addMonsters() {
+void Dungeon::addMonsters(string difficulty) {
     MonsterClass monsterClass;
     monsterClass.loadMonstersFromCsv("monsters_patched.csv");  // Ensure this method loads monsters
 
     // Retrieve the loaded monsters
-    std::vector<Monsters*> loadedMonsters = monsterClass.getRandomMonster();
+    std::vector<Monsters*> loadedMonsters = monsterClass.getRandomMonster(difficulty);
 
     for (Monsters* monster : loadedMonsters) {
         // Add the monster to its corresponding room based on roomNumber

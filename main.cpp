@@ -12,10 +12,12 @@ using namespace std;
 Player* createCharacter(); // Function prototype
 int showBattleMenu(Player* player); // Function prototype
 bool continuePlaying(Player* player, Monsters* monster); // Function prototype
+string chooseDifficulty();
 
 int main() {
     Dungeon dungeon(20);
-    dungeon.addMonsters();
+    string difficulty = chooseDifficulty();
+    dungeon.addMonsters(difficulty);
 
 // Adding edges
     dungeon.addEdge(0, 1);
@@ -69,7 +71,6 @@ int main() {
 
         new_room =  dungeon.changeRoom(new_room);
         currentRoom = rooms[new_room];
-
     }
     return 0;
 }
@@ -150,11 +151,12 @@ int showBattleMenu(Player* player) {
 
 // Logic for keep playing the game and for turns
 bool continuePlaying(Player* player, Monsters* monster) {
-
+    // If you have already defeated a monster, you can not fight again
     if (monster->getHP() < 0) {
         cout << "You have already defeated " << monster->getName() <<"! Moving to the next room..." << endl;
         return true;
     }
+    // Damage done by the monster
     int monsterDamagePermanent = static_cast<int>(monster->getHP() * 0.2);
     std::this_thread::sleep_for(std::chrono::seconds(2));
     cout << "--------------------------------------------------------" << endl;
@@ -175,7 +177,7 @@ bool continuePlaying(Player* player, Monsters* monster) {
             selection = showBattleMenu(player);
         }
 
-        // 1 if attack, 2 if spell
+        // Player attack logic
         if (selection == 1) {
             cout << "You attack the monster!" << endl;
             int dice = player->attackDice();
@@ -185,12 +187,14 @@ bool continuePlaying(Player* player, Monsters* monster) {
             cout << "You deal " << damage << " damage to the monster!" << endl;
             monster->setHP(monster->getHP() - damage);
         }
+        // Spell Logic
         else if (selection == 2) {
             possibleSpell = player->castSpell(monster);
             if (!possibleSpell) {
                 continuePlaying(player, monster);
             }
         }
+        // Player heal logic
         else if (selection == 3) {
             cout << "You heal yourself!" << endl;
             int dice = player->healDice();
@@ -234,8 +238,23 @@ bool continuePlaying(Player* player, Monsters* monster) {
         cout << "Mana: " << player->getMana() << endl;
         std::this_thread::sleep_for(std::chrono::seconds(2));
         player->showStore();
+        player->addMonster(monster);
         return true;
     }
 }
 
+string chooseDifficulty() {
+    string difficulty;
+    while (true) {
+        cout << "Choose difficulty level (Easy, Medium, Hard): ";
+        cin >> difficulty;
+        if (difficulty == "Easy" || difficulty == "Medium" || difficulty == "Hard") {
+            cout << "You have chosen the " << difficulty << " difficulty level!" << endl;
+            break; // valid difficulty entered
+        } else {
+            cout << "Invalid difficulty. Please enter one of the following: Easy, Medium, Hard." << endl;
+        }
+    }
+    return difficulty;
+}
 

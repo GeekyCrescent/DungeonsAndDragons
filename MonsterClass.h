@@ -1,5 +1,6 @@
 #pragma once
 #include "Monster.h"
+#include "Player.h"
 #include <string>
 #include <vector>
 
@@ -12,6 +13,6 @@ public:
     void addMonster(Monsters* monster);
     void loadMonstersFromCsv(const std::string& filename);
     void displayMonsters();
-    std::vector<Monsters*> getRandomMonster();
+    std::vector<Monsters*> getRandomMonster(string difficilty);
 };
 

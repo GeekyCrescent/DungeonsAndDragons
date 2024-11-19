@@ -78,3 +78,10 @@
 2805	4038	7535000791445433	DungeonsAndDragons.exe	e4ed7e256c23d3ba
 7	1469	7535008190151238	CMakeFiles/DungeonsAndDragons.dir/main.cpp.obj	65855e01e472bb00
 1469	2723	7535008202632135	DungeonsAndDragons.exe	e4ed7e256c23d3ba
+5	1957	7537399688466979	CMakeFiles/DungeonsAndDragons.dir/main.cpp.obj	65855e01e472bb00
+112	2062	7537399689542668	CMakeFiles/DungeonsAndDragons.dir/Spells.cpp.obj	48c41ad3a4f4150b
+221	2902	7537399697922884	CMakeFiles/DungeonsAndDragons.dir/Player.cpp.obj	d43570138904acb1
+336	3229	7537399701210103	CMakeFiles/DungeonsAndDragons.dir/SpellClass.cpp.obj	2b14316ccbc8edc8
+462	3952	7537399708435917	CMakeFiles/DungeonsAndDragons.dir/MonsterClass.cpp.obj	4911127aa1c4123a
+553	4262	7537399711542020	CMakeFiles/DungeonsAndDragons.dir/Dungeon.cpp.obj	113c7925787dc058
+4263	6109	7537399729954968	DungeonsAndDragons.exe	e4ed7e256c23d3ba

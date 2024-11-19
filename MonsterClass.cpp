@@ -1,4 +1,5 @@
 #include "MonsterClass.h"
+#include "Player.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -56,7 +57,7 @@ void MonsterClass::loadMonstersFromCsv(const std::string& filename) {
 
         std::stringstream ss(line);
 
-        // read and assign values from all the coluns
+        // read and assign values from all the columns
         std::getline(ss, name, ',');
         std::getline(ss, crStr, ',');
         std::getline(ss, type, ',');
@@ -82,24 +83,19 @@ void MonsterClass::loadMonstersFromCsv(const std::string& filename) {
 void MonsterClass::displayMonsters() {
     Monsters* current = head;
     while (current) {
-        std::cout   << "Name: " << current->getName();
-        std::cout   << ", CR: " << current->getCR();
-        std::cout   << ", Type: " << current->getType();
-        std::cout   << ", Size: " << current->getSize();
-        std::cout   << ", AC: " << current->getAC();
-        std::cout   << ", HP: " << current->getHP();
-        std::cout   << ", Alignment: " << current->getAlign() << std::endl;
+        current->displayMonster();
         current = current->getNext();
     }
 }
 
 // Get random monster from the list
-std::vector<Monsters*> MonsterClass::getRandomMonster() {
+std::vector<Monsters*> MonsterClass::getRandomMonster(string difficulty) {
     // Create a random device and a random number generator
     std::random_device rd;
     std::mt19937 gen(rd());
 
-    // Create a uniform distribution in the range [1, 700]
+
+    // Create a uniform distribution in the range [1, 760]
     std::uniform_int_distribution<> dis(1, 760);
 
     // Vector to hold the pointers of selected monsters
@@ -113,7 +109,7 @@ std::vector<Monsters*> MonsterClass::getRandomMonster() {
         Monsters* current = head;
         int currentIndex = 1;  // Start from 1 since the list is 1-based in terms of index
         while (current) {
-            if (currentIndex == randomIndex) {
+            if (currentIndex == randomIndex ) {
                 // Ensure that we don't select the same monster twice
                 bool alreadySelected = false;
                 for (Monsters* selected : selectedMonsters) {
@@ -124,7 +120,17 @@ std::vector<Monsters*> MonsterClass::getRandomMonster() {
                 }
 
                 // If not already selected, add it to the list of selected monsters
-                if (!alreadySelected) {
+                if (difficulty == "Easy" && !alreadySelected && current->getHP() < 50) {
+                    selectedMonsters.push_back(current);
+                    current->setRoomNumber(i+1);
+                    break;
+                }
+                if (difficulty == "Medium" && !alreadySelected && current->getHP() > 100 && current->getHP() < 150) {
+                    selectedMonsters.push_back(current);
+                    current->setRoomNumber(i+1);
+                    break;
+                }
+                if (difficulty == "Hard" && !alreadySelected && current->getHP() > 150) {
                     selectedMonsters.push_back(current);
                     current->setRoomNumber(i+1);
                     break;
