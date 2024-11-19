@@ -124,6 +124,11 @@ std::vector<Monsters*> MonsterClass::getRandomMonster(string difficulty) {
                     current->setRoomNumber(i + 1);
                     break;
                 }
+                else if (difficulty == "Mixed") {
+                    selectedMonsters.push_back(current);
+                    current->setRoomNumber(i + 1);
+                    break;
+                }
             }
             current = current->getNext();
             currentIndex++;

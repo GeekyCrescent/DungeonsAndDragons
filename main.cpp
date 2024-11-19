@@ -251,13 +251,13 @@ bool continuePlaying(Player* player, Monsters* monster) {
 string chooseDifficulty() {
     string difficulty;
     while (true) {
-        cout << "Choose difficulty level (Easy, Medium, Hard): ";
+        cout << "Choose difficulty level (Easy, Medium, Hard, Mixed): ";
         cin >> difficulty;
-        if (difficulty == "Easy" || difficulty == "Medium" || difficulty == "Hard") {
+        if (difficulty == "Easy" || difficulty == "Medium" || difficulty == "Hard" || difficulty == "Mixed") {
             cout << "You have chosen the " << difficulty << " difficulty level!" << endl;
             break; // valid difficulty entered
         } else {
-            cout << "Invalid difficulty. Please enter one of the following: Easy, Medium, Hard." << endl;
+            cout << "Invalid difficulty. Please enter one of the following: Easy, Medium, Hard, Mixed." << endl;
         }
     }
     return difficulty;
