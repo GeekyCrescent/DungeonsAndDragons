@@ -19,6 +19,11 @@ int main() {
     string difficulty = chooseDifficulty();
     dungeon.addMonsters(difficulty);
 
+    for (Room* room : dungeon.getRooms()) {
+        cout << "Room : " << room->getMonster()->getName() << endl;
+        cout << "HP: " << room->getMonster()->getHP() << endl;
+    }
+
 // Adding edges
     dungeon.addEdge(0, 1);
     dungeon.addEdge(0, 5);

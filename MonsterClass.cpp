@@ -102,37 +102,26 @@ std::vector<Monsters*> MonsterClass::getRandomMonster(string difficulty) {
     std::vector<Monsters*> selectedMonsters;
 
     // Loop to select 20 random monsters
-    for (int i = 0; i < 20; i++) {
+    while (selectedMonsters.size() < 20) {
+        int i = 1;
         int randomIndex = dis(gen);
 
         // Traverse the list to find the monster at the random index
         Monsters* current = head;
         int currentIndex = 1;  // Start from 1 since the list is 1-based in terms of index
         while (current) {
-            if (currentIndex == randomIndex ) {
-                // Ensure that we don't select the same monster twice
-                bool alreadySelected = false;
-                for (Monsters* selected : selectedMonsters) {
-                    if (selected == current) {
-                        alreadySelected = true;
-                        break;
-                    }
-                }
-
-                // If not already selected, add it to the list of selected monsters
-                if (difficulty == "Easy" && !alreadySelected && current->getHP() < 50) {
+            if (currentIndex == randomIndex) {
+                if (difficulty == "Easy" && current->getHP() < 50) {
                     selectedMonsters.push_back(current);
-                    current->setRoomNumber(i+1);
+                    current->setRoomNumber(i + 1);
                     break;
-                }
-                if (difficulty == "Medium" && !alreadySelected && current->getHP() > 100 && current->getHP() < 150) {
+                } else if (difficulty == "Medium" && current->getHP() >= 50 && current->getHP() <= 150) {
                     selectedMonsters.push_back(current);
-                    current->setRoomNumber(i+1);
+                    current->setRoomNumber(i + 1);
                     break;
-                }
-                if (difficulty == "Hard" && !alreadySelected && current->getHP() > 150) {
+                } else if (difficulty == "Hard" && current->getHP() > 150) {
                     selectedMonsters.push_back(current);
-                    current->setRoomNumber(i+1);
+                    current->setRoomNumber(i + 1);
                     break;
                 }
             }
