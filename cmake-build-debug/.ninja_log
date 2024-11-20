@@ -1,0 +1,24 @@
+# ninja log v5
+7	1666	7537419297141159	CMakeFiles/DungeonsAndDragons.dir/main.cpp.obj	65855e01e472bb00
+2316	3599	7537419316273960	DungeonsAndDragons.exe	e4ed7e256c23d3ba
+336	3229	7537399701210103	CMakeFiles/DungeonsAndDragons.dir/SpellClass.cpp.obj	2b14316ccbc8edc8
+3	560	7532205172661205	build.ninja	51f1e86853d20d07
+112	2062	7537399689542668	CMakeFiles/DungeonsAndDragons.dir/Spells.cpp.obj	48c41ad3a4f4150b
+221	2902	7537399697922884	CMakeFiles/DungeonsAndDragons.dir/Player.cpp.obj	d43570138904acb1
+108	2315	7537419303639166	CMakeFiles/DungeonsAndDragons.dir/MonsterClass.cpp.obj	4911127aa1c4123a
+393	3672	7533908419047493	CMakeFiles/DungeonsAndDragons.dir/Monster.cpp.obj	95e1c5132bd534a0
+303	2413	7531321959153153	CMakeFiles/DungeonsAndDragons.dir/Store.cpp.obj	6a0f054ff04baf40
+135	1346	7532271302959482	CMakeFiles/DungeonsAndDragons.dir/Room.cpp.obj	e80223591f459c56
+553	4262	7537399711542020	CMakeFiles/DungeonsAndDragons.dir/Dungeon.cpp.obj	113c7925787dc058
+7	1443	7537420025862750	CMakeFiles/DungeonsAndDragons.dir/main.cpp.obj	65855e01e472bb00
+1444	2714	7537420038516746	DungeonsAndDragons.exe	e4ed7e256c23d3ba
+5	1979	7537449779823364	CMakeFiles/DungeonsAndDragons.dir/MonsterClass.cpp.obj	4911127aa1c4123a
+1980	3596	7537449795929830	DungeonsAndDragons.exe	e4ed7e256c23d3ba
+5	1509	7537450207365772	CMakeFiles/DungeonsAndDragons.dir/main.cpp.obj	65855e01e472bb00
+1510	2846	7537450220652507	DungeonsAndDragons.exe	e4ed7e256c23d3ba
+8	1710	7537453468082332	CMakeFiles/DungeonsAndDragons.dir/main.cpp.obj	65855e01e472bb00
+140	2446	7537453475441535	CMakeFiles/DungeonsAndDragons.dir/MonsterClass.cpp.obj	4911127aa1c4123a
+2447	3774	7537453488672153	DungeonsAndDragons.exe	e4ed7e256c23d3ba
+6	1587	7537453977378417	CMakeFiles/DungeonsAndDragons.dir/main.cpp.obj	65855e01e472bb00
+97	2322	7537453984707138	CMakeFiles/DungeonsAndDragons.dir/MonsterClass.cpp.obj	4911127aa1c4123a
+2323	3765	7537453999088489	DungeonsAndDragons.exe	e4ed7e256c23d3ba

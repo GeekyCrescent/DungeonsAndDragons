@@ -55,8 +55,44 @@ build CMakeFiles/DungeonsAndDragons.dir/main.cpp.obj: CXX_COMPILER__DungeonsAndD
   OBJECT_DIR = CMakeFiles\DungeonsAndDragons.dir
   OBJECT_FILE_DIR = CMakeFiles\DungeonsAndDragons.dir
 
-build CMakeFiles/DungeonsAndDragons.dir/Monsters.cpp.obj: CXX_COMPILER__DungeonsAndDragons_unscanned_Debug C$:/Juan$ Ferro/Cursos/Proyectos/DungeonsAndDragons/Monsters.cpp || cmake_object_order_depends_target_DungeonsAndDragons
-  DEP_FILE = CMakeFiles\DungeonsAndDragons.dir\Monsters.cpp.obj.d
+build CMakeFiles/DungeonsAndDragons.dir/Player.cpp.obj: CXX_COMPILER__DungeonsAndDragons_unscanned_Debug C$:/Juan$ Ferro/Cursos/Proyectos/DungeonsAndDragons/Player.cpp || cmake_object_order_depends_target_DungeonsAndDragons
+  DEP_FILE = CMakeFiles\DungeonsAndDragons.dir\Player.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\DungeonsAndDragons.dir
+  OBJECT_FILE_DIR = CMakeFiles\DungeonsAndDragons.dir
+
+build CMakeFiles/DungeonsAndDragons.dir/Spells.cpp.obj: CXX_COMPILER__DungeonsAndDragons_unscanned_Debug C$:/Juan$ Ferro/Cursos/Proyectos/DungeonsAndDragons/Spells.cpp || cmake_object_order_depends_target_DungeonsAndDragons
+  DEP_FILE = CMakeFiles\DungeonsAndDragons.dir\Spells.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\DungeonsAndDragons.dir
+  OBJECT_FILE_DIR = CMakeFiles\DungeonsAndDragons.dir
+
+build CMakeFiles/DungeonsAndDragons.dir/SpellClass.cpp.obj: CXX_COMPILER__DungeonsAndDragons_unscanned_Debug C$:/Juan$ Ferro/Cursos/Proyectos/DungeonsAndDragons/SpellClass.cpp || cmake_object_order_depends_target_DungeonsAndDragons
+  DEP_FILE = CMakeFiles\DungeonsAndDragons.dir\SpellClass.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\DungeonsAndDragons.dir
+  OBJECT_FILE_DIR = CMakeFiles\DungeonsAndDragons.dir
+
+build CMakeFiles/DungeonsAndDragons.dir/MonsterClass.cpp.obj: CXX_COMPILER__DungeonsAndDragons_unscanned_Debug C$:/Juan$ Ferro/Cursos/Proyectos/DungeonsAndDragons/MonsterClass.cpp || cmake_object_order_depends_target_DungeonsAndDragons
+  DEP_FILE = CMakeFiles\DungeonsAndDragons.dir\MonsterClass.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\DungeonsAndDragons.dir
+  OBJECT_FILE_DIR = CMakeFiles\DungeonsAndDragons.dir
+
+build CMakeFiles/DungeonsAndDragons.dir/Monster.cpp.obj: CXX_COMPILER__DungeonsAndDragons_unscanned_Debug C$:/Juan$ Ferro/Cursos/Proyectos/DungeonsAndDragons/Monster.cpp || cmake_object_order_depends_target_DungeonsAndDragons
+  DEP_FILE = CMakeFiles\DungeonsAndDragons.dir\Monster.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\DungeonsAndDragons.dir
+  OBJECT_FILE_DIR = CMakeFiles\DungeonsAndDragons.dir
+
+build CMakeFiles/DungeonsAndDragons.dir/Room.cpp.obj: CXX_COMPILER__DungeonsAndDragons_unscanned_Debug C$:/Juan$ Ferro/Cursos/Proyectos/DungeonsAndDragons/Room.cpp || cmake_object_order_depends_target_DungeonsAndDragons
+  DEP_FILE = CMakeFiles\DungeonsAndDragons.dir\Room.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\DungeonsAndDragons.dir
+  OBJECT_FILE_DIR = CMakeFiles\DungeonsAndDragons.dir
+
+build CMakeFiles/DungeonsAndDragons.dir/Dungeon.cpp.obj: CXX_COMPILER__DungeonsAndDragons_unscanned_Debug C$:/Juan$ Ferro/Cursos/Proyectos/DungeonsAndDragons/Dungeon.cpp || cmake_object_order_depends_target_DungeonsAndDragons
+  DEP_FILE = CMakeFiles\DungeonsAndDragons.dir\Dungeon.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\DungeonsAndDragons.dir
   OBJECT_FILE_DIR = CMakeFiles\DungeonsAndDragons.dir
@@ -69,7 +105,7 @@ build CMakeFiles/DungeonsAndDragons.dir/Monsters.cpp.obj: CXX_COMPILER__Dungeons
 #############################################
 # Link the executable DungeonsAndDragons.exe
 
-build DungeonsAndDragons.exe: CXX_EXECUTABLE_LINKER__DungeonsAndDragons_Debug CMakeFiles/DungeonsAndDragons.dir/main.cpp.obj CMakeFiles/DungeonsAndDragons.dir/Monsters.cpp.obj
+build DungeonsAndDragons.exe: CXX_EXECUTABLE_LINKER__DungeonsAndDragons_Debug CMakeFiles/DungeonsAndDragons.dir/main.cpp.obj CMakeFiles/DungeonsAndDragons.dir/Player.cpp.obj CMakeFiles/DungeonsAndDragons.dir/Spells.cpp.obj CMakeFiles/DungeonsAndDragons.dir/SpellClass.cpp.obj CMakeFiles/DungeonsAndDragons.dir/MonsterClass.cpp.obj CMakeFiles/DungeonsAndDragons.dir/Monster.cpp.obj CMakeFiles/DungeonsAndDragons.dir/Room.cpp.obj CMakeFiles/DungeonsAndDragons.dir/Dungeon.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\DungeonsAndDragons.dir
